@@ -1,0 +1,42 @@
+﻿<Window x:Class="TicTacToe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tic Tac Toe" Height="350" Width="350">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Name="gameGrid" Margin="5">
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="60"/>
+                    <Setter Property="Height" Value="60"/>
+                    <Setter Property="FontSize" Value="24"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="Command" Value="{Binding CellClickCommand}"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Name="btn0" Content="{Binding Board[0]}"/>
+            <Button Grid.Row="0" Grid.Column="1" Name="btn1" Content="{Binding Board[1]}"/>
+            <Button Grid.Row="0" Grid.Column="2" Name="btn2" Content="{Binding Board[2]}"/>
+            <Button Grid.Row="1" Grid.Column="0" Name="btn3" Content="{Binding Board[3]}"/>
+            <Button Grid.Row="1" Grid.Column="1" Name="btn4" Content="{Binding Board[4]}"/>
+            <Button Grid.Row="1" Grid.Column="2" Name="btn5" Content="{Binding Board[5]}"/>
+            <Button Grid.Row="2" Grid.Column="0" Name="btn6" Content="{Binding Board[6]}"/>
+            <Button Grid.Row="2" Grid.Column="1" Name="btn7" Content="{Binding Board[7]}"/>
+            <Button Grid.Row="2" Grid.Column="2" Name="btn8" Content="{Binding Board[8]}"/>
+        </Grid>
+        <Button Grid.Row="1" Content="New Game" Width="100" Height="30" Margin="5" Click="NewGame_Click"/>
+    </Grid>
+</Window>
